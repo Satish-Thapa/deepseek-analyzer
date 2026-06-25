@@ -1,4 +1,4 @@
-<h1 align="center">⚡ DeepSeek CLI</h1>
+<h1 align="center">⚡ DeepSeek Analyzer</h1>
 
 <p align="center">
   <strong>A beautiful terminal dashboard for the DeepSeek API</strong><br>
