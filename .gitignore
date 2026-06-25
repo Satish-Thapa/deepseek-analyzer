@@ -8,6 +8,5 @@ Thumbs.db
 *~
 .vscode/
 .idea/
-
 # Data (user-specific)
 *.jsonl
