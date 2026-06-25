@@ -62,17 +62,37 @@ check_deps() {
   fi
 }
 
+CONFIG_FILE="${DATA_DIR}/config"
+
+# Load saved API key if not already set
+load_api_key() {
+  if [[ -z "${DEEPSEEK_API_KEY:-}" && -f "$CONFIG_FILE" ]]; then
+    source "$CONFIG_FILE"
+  fi
+}
+
 check_api_key() {
+  load_api_key
   if [[ -z "${DEEPSEEK_API_KEY:-}" ]]; then
     echo ""
-    echo -e "  ${RED}${BOLD}API key not set!${RST}"
+    echo -e "  ${YELLOW}${BOLD}🔑 API key not configured${RST}"
+    echo -e "  ${DIM}Get your key at: ${UL}https://platform.deepseek.com/api_keys${RST}"
     echo ""
-    echo -e "  ${WHITE}Set your key:${RST}"
-    echo -e "  ${DIM}export DEEPSEEK_API_KEY=\"sk-xxxxxxxxxxxxxxxx\"${RST}"
+    printf "  ${CYAN}${BOLD}Enter your API key:${RST} "
+    IFS= read -r user_key
+    
+    if [[ -z "$user_key" ]]; then
+      die "No key entered. Aborting."
+    fi
+
+    # Save to config
+    echo "export DEEPSEEK_API_KEY=\"${user_key}\"" > "$CONFIG_FILE"
+    chmod 600 "$CONFIG_FILE"
+    export DEEPSEEK_API_KEY="$user_key"
+
     echo ""
-    echo -e "  ${GRAY}Get your key at: ${UL}https://platform.deepseek.com/api_keys${RST}"
+    echo -e "  ${GREEN}${BOLD}✔ Key saved${RST} ${DIM}to ~/.deepseek-cli/config${RST}"
     echo ""
-    exit 1
   fi
 }
 
