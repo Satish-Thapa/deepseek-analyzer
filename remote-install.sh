@@ -25,4 +25,5 @@ if [[ ":$PATH:" != *":${INSTALL_DIR}:"* ]]; then
   echo "⚠ Add to your PATH: export PATH=\"\$HOME/.local/bin:\$PATH\""
 fi
 
+
 echo "✔ Installed! Run: dsk"

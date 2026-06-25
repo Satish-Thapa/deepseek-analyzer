@@ -13,40 +13,31 @@
 
 ---
 
-## ✨ Features
+## Features
 
-- **📊 Rich Dashboard** — Colorful account overview with balance bar, models, and token capacity
-- **💬 Interactive Chat** — Chat directly with DeepSeek models from your terminal
-- **💰 Cost Estimator** — Calculate costs before you spend
-- **📜 History Tracking** — All API calls and chats are logged locally
-- **🎨 Beautiful Output** — ANSI colors, box drawing, and Unicode icons
+- **Rich Dashboard** — Colorful account overview with balance bar, models, and token capacity
+- **Interactive Chat** — Chat directly with DeepSeek models from your terminal
+- **Cost Estimator** — Calculate costs before you spend
+- **History Tracking** — All API calls and chats are logged locally
+- **Beautiful Output** — ANSI colors, box drawing, and Unicode icons
 - **⚡ Fast & Lightweight** — Pure bash, no heavy dependencies
 
-## 📦 Requirements
+## Requirements
 
 | Tool   | Purpose         |
-|--------|-----------------|
+| ------ | --------------- |
 | `bash` | Shell (5.0+)    |
 | `curl` | API requests    |
 | `jq`   | JSON parsing    |
 | `awk`  | Math operations |
 
-## 🚀 Installation
+## Installation
 
 ```bash
-git clone https://github.com/YOUR_USER/deepseek-cli.git
-cd deepseek-cli
-bash install.sh
+curl -sL https://raw.githubusercontent.com/Satish-Thapa/deepseek-analyzer/main/remote-install.sh | bash
 ```
 
-Or manually:
-
-```bash
-cp dsk ~/.local/bin/dsk
-chmod +x ~/.local/bin/dsk
-```
-
-## ⚙️ Configuration
+## Configuration
 
 Set your DeepSeek API key:
 
@@ -62,7 +53,7 @@ echo 'export DEEPSEEK_API_KEY="sk-xxxx"' >> ~/.bashrc
 
 > Get your API key at [platform.deepseek.com/api_keys](https://platform.deepseek.com/api_keys)
 
-## 📖 Usage
+## Usage
 
 ### Dashboard (default)
 
@@ -97,7 +88,7 @@ dsk help          # All commands
 dsk --version     # Version info
 ```
 
-## 📁 Data Storage
+## Data Storage
 
 All data is stored in `~/.deepseek-cli/`:
 
@@ -108,6 +99,6 @@ All data is stored in `~/.deepseek-cli/`:
 └── pricing.json       # Model pricing data
 ```
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](LICENSE).
