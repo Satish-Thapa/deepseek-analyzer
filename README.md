@@ -20,7 +20,7 @@
 - **Cost Estimator** — Calculate costs before you spend
 - **History Tracking** — All API calls and chats are logged locally
 - **Beautiful Output** — ANSI colors, box drawing, and Unicode icons
-- **⚡ Fast & Lightweight** — Pure bash, no heavy dependencies
+- **Fast & Lightweight** — Pure bash, no heavy dependencies
 
 ## Requirements
 
