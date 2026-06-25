@@ -6,7 +6,7 @@ REPO="https://raw.githubusercontent.com/Satish-Thapa/deepseek-analyzer/main"
 INSTALL_DIR="${HOME}/.local/bin"
 DATA_DIR="${HOME}/.deepseek-cli"
 
-echo "⚡ Installing DeepSeek CLI..."
+echo "⚡ Installing DeepSeek Analyzer..."
 
 # Check deps
 for cmd in curl jq awk; do
